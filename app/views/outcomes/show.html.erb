@@ -1,0 +1,27 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @outcome %>
+
+<div>
+  <%= link_to "Edit this outcome", edit_outcome_path(@outcome) %> |
+  <%= link_to "Back to outcomes", outcomes_path %>
+
+  <%= button_to "Destroy this outcome", @outcome, method: :delete %>
+
+  <div data-controller="hello" id="<%= @outcome.id %>"></div>
+
+<!--  <script type='module'>-->
+<!--      import { createConsumer } from "@rails/actioncable"-->
+<!--      createConsumer().subscriptions.create({ channel: "OutcomeEventsChannel", id: "<%= @outcome.id %>" }, {-->
+<!--          connected() {-->
+<!--              console.log("Connected to the channel:", this);-->
+<!--          },-->
+<!--          disconnected() {-->
+<!--              console.log("Disconnected");-->
+<!--          },-->
+<!--          received(data) {-->
+<!--              console.log("Received some data:", data);-->
+<!--          }-->
+<!--      });-->
+<!--  </script>-->
+</div>
